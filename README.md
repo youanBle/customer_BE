@@ -2,4 +2,4 @@
 
 ### How to start:
 
-node app.js
+run  node app.js
