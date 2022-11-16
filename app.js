@@ -64,7 +64,7 @@ app.get('/custom_store_visiting/all', (req, res) => {
             console.log(err);
             return;
         }
-        const customerVisiting = processCsvFile(data, 50);
+        const customerVisiting = processCsvFile(data, 200);
         const validPostCode = {};
 
         //It will cost too much time if simply fetching PRIZM CODE for each record.
@@ -96,7 +96,7 @@ app.get('/custom_store_visiting/all', (req, res) => {
             })
             promiseArr.push(promise)
         }
-        
+
         Promise.all(promiseArr).then(data => {
             const validMap = {}
             data.forEach((pair) => {
